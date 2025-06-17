@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/experience"
+        android:title="Experience"
+        android:icon="@drawable/experience"
+        app:showAsAction="withText"/>
+
+
+    <item
+        android:id="@+id/portfolio"
+        android:title="Portfolio"
+        android:icon="@drawable/profile"
+        app:showAsAction="withText"/>
+
+
+    <item
+        android:id="@+id/education"
+        android:title="Education"
+        android:icon="@drawable/education"
+        app:showAsAction="withText"/>
+
+
+    <item
+        android:id="@+id/rate"
+        android:title="Rate"
+        android:icon="@drawable/rate"
+        app:showAsAction="withText"/>
+
+
+    <item
+        android:id="@+id/share"
+        android:title="Share"
+        android:icon="@drawable/share"
+        app:showAsAction="withText"/>
+
+
+    <item
+        android:id="@+id/contact"
+        android:title="Contact"
+        android:icon="@drawable/contacts"
+        app:showAsAction="withText"/>
+
+
+</menu>
