@@ -32,7 +32,7 @@ class ExperienceFragment : Fragment(R.layout.fragment_experience) {
         super.onViewCreated(view, savedInstanceState)
 
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner){
-            findNavController().popBackStack(R.id.homeFragment, false)
+            findNavController().navigate(R.id.homeFragment)
         }
 
         binding.cvCodicesWebsite.setOnClickListener {

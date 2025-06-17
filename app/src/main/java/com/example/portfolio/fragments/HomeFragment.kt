@@ -45,16 +45,12 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         }
 
         binding.cvResume.setOnClickListener {
-            val uri = Uri.parse("https://drive.google.com/file/d/1ddnaFCzZBiIJTBg99S2dCWyzxiqqE7UB/view?usp=sharing")
+            val uri = Uri.parse("https://drive.google.com/file/d/1J2zHatv5cx5oNdQNqWaUeJpecdNPx5Kg/view?usp=sharing")
             val intent = Intent(Intent.ACTION_VIEW, uri)
             intent.addCategory(Intent.CATEGORY_BROWSABLE)
             val chooser = Intent.createChooser(intent, "Open Resume")
             startActivity(chooser)
         }
-
-
-
-        
     }
 
 

@@ -9,23 +9,7 @@
         android:id="@+id/homeFragment"
         android:name="com.example.portfolio.fragments.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_homeFragment_to_webViewFragment"
-            app:destination="@id/webViewFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/webViewFragment"
-        android:name="com.example.portfolio.fragments.WebViewFragment"
-        android:label="fragment_webview"
-        tools:layout="@layout/fragment_webview">
-
-        <argument android:name="link"
-            app:argType="string"
-            app:nullable="false"/>
-
-
-    </fragment>
+        tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/experienceFragment"
         android:name="com.example.portfolio.fragments.ExperienceFragment"
