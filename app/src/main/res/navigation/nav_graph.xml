@@ -36,4 +36,9 @@
         android:name="com.example.portfolio.fragments.CertificateFragment"
         android:label="fragment_certificate"
         tools:layout="@layout/fragment_certificate" />
+    <fragment
+        android:id="@+id/educationFragment"
+        android:name="com.example.portfolio.fragments.EducationFragment"
+        android:label="fragment_education"
+        tools:layout="@layout/fragment_education" />
 </navigation>

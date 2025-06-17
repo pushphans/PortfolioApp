@@ -71,7 +71,8 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 (R.id.education) -> {
-
+                    findNavController(R.id.fragmentContainerView).navigate(R.id.educationFragment)
+                    drawerLayout.close()
                 }
 
                 (R.id.rate) -> {
