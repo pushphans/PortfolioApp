@@ -8,10 +8,13 @@ import androidx.activity.addCallback
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.content.FileProvider
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import com.example.portfolio.databinding.ActivityMainBinding
+import java.io.File
+import java.io.FileOutputStream
 
 class MainActivity : AppCompatActivity() {
     private val binding: ActivityMainBinding by lazy {
@@ -75,12 +78,10 @@ class MainActivity : AppCompatActivity() {
                     drawerLayout.close()
                 }
 
-                (R.id.rate) -> {
-
-                }
 
                 (R.id.share) -> {
-
+                    shareResume()
+                    drawerLayout.close()
                 }
 
                 (R.id.contact) -> {
@@ -90,6 +91,32 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+
+
+    }
+
+    private fun shareResume(){
+        val fileName = "Pushp_Resume.pdf"
+
+        val inputStream = resources.openRawResource(R.raw.myresume)
+        val outFile = File(cacheDir, fileName)
+
+        inputStream.use { input ->
+            FileOutputStream(outFile).use{output ->
+                input.copyTo(output)
+            }
+        }
+
+        val uri = FileProvider.getUriForFile(this, "${packageName}.fileprovider",outFile)
+
+        val intent = Intent(Intent.ACTION_SEND).apply {
+            type = "application/pdf"
+            putExtra(Intent.EXTRA_STREAM, uri)
+            putExtra(Intent.EXTRA_SUBJECT, "Pushp Hans - Resume")
+            putExtra(Intent.EXTRA_TEXT,"You can use my resume to refer me😅")
+        }
+
+        startActivity(Intent.createChooser(intent, "Share via"))
     }
 
 }

@@ -24,9 +24,9 @@
 
 
     <item
-        android:id="@+id/rate"
-        android:title="Rate"
-        android:icon="@drawable/rate"
+        android:id="@+id/contact"
+        android:title="Contact"
+        android:icon="@drawable/contacts"
         app:showAsAction="withText"/>
 
 
@@ -36,12 +36,6 @@
         android:icon="@drawable/share"
         app:showAsAction="withText"/>
 
-
-    <item
-        android:id="@+id/contact"
-        android:title="Contact"
-        android:icon="@drawable/contacts"
-        app:showAsAction="withText"/>
 
 
 </menu>

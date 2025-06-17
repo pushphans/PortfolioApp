@@ -29,8 +29,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         super.onViewCreated(view, savedInstanceState)
 
         binding.cvGithub.setOnClickListener {
-            val action = HomeFragmentDirections.actionHomeFragmentToWebViewFragment("https://github.com/pushphans")
-            findNavController().navigate(action)
+            val intent = Intent(Intent.ACTION_VIEW).apply {
+                data = Uri.parse("https://github.com/pushphans")
+            }
+            val chooser = Intent.createChooser(intent, "Open with")
+            startActivity(chooser)
         }
 
         binding.cvLinkedIn.setOnClickListener {
@@ -42,9 +45,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         }
 
         binding.cvResume.setOnClickListener {
-//            val action = HomeFragmentDirections.actionHomeFragmentToWebViewFragment("https://drive.google.com/file/d/1ddnaFCzZBiIJTBg99S2dCWyzxiqqE7UB/view?usp=sharing")
-//            findNavController().navigate(action)
-
             val uri = Uri.parse("https://drive.google.com/file/d/1ddnaFCzZBiIJTBg99S2dCWyzxiqqE7UB/view?usp=sharing")
             val intent = Intent(Intent.ACTION_VIEW, uri)
             intent.addCategory(Intent.CATEGORY_BROWSABLE)
