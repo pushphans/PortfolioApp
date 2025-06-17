@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.addCallback
+import androidx.navigation.fragment.findNavController
 import com.example.portfolio.MainActivity
 import com.example.portfolio.R
 import com.example.portfolio.databinding.FragmentEducationBinding
@@ -27,6 +29,9 @@ class EducationFragment : Fragment(R.layout.fragment_education) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner){
+            findNavController().popBackStack(R.id.homeFragment, false)
+        }
 
     }
 

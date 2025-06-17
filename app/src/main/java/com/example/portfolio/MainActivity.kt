@@ -84,7 +84,8 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 (R.id.contact) -> {
-
+                    findNavController(R.id.fragmentContainerView).navigate(R.id.contactFragment)
+                    drawerLayout.close()
                 }
             }
             true
