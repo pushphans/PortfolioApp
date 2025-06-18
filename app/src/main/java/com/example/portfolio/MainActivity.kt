@@ -87,6 +87,7 @@ class MainActivity : AppCompatActivity() {
 
 
                 (R.id.share) -> {
+                    findNavController(R.id.fragmentContainerView).navigate(R.id.homeFragment)
                     shareResume()
                     drawerLayout.close()
                 }
