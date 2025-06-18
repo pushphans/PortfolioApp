@@ -56,10 +56,8 @@ class MainActivity : AppCompatActivity() {
             if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
                 drawerLayout.closeDrawer(GravityCompat.START)
             } else {
-                val navController = findNavController(R.id.fragmentContainerView)
-                navController.popBackStack()
-                if(!navController.popBackStack()){
-                    finish()
+                if (!findNavController(R.id.fragmentContainerView).popBackStack()) {
+                    finish() // Tabhi finish karo jab backstack khaali ho
                 }
             }
         }

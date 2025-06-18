@@ -31,9 +31,6 @@ class ExperienceFragment : Fragment(R.layout.fragment_experience) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner){
-            findNavController().navigate(R.id.homeFragment)
-        }
 
         binding.cvCodicesWebsite.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW).apply {
